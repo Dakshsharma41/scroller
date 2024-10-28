@@ -7,6 +7,9 @@ import { Observable, delay, of } from 'rxjs';
 export class PaginationDummyService {
 
   private totalItems=300;
+
+  constructor(private http:HttpClient) { }
+
   getItems(page=1,itemsPerPage=10):Observable<string[]>{
     const startIndex=(page-1)*itemsPerPage;
     const endIndex=startIndex+itemsPerPage;
@@ -19,5 +22,5 @@ export class PaginationDummyService {
     return of(items).pipe(delay(500));
   }
 
-  constructor() { }
+  
 }
