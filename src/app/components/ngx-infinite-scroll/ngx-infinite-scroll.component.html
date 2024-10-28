@@ -1,0 +1,16 @@
+<div 
+class="search-results"
+infiniteScroll 
+[infiniteScrollDistance]="2" 
+[infiniteScrollThrottle]="500" 
+(scrolled)="onScroll()"
+[scrollWindow]="false"
+>
+<div class="data-card">
+    @for(item of items; track items){
+        <ul class="item-list">
+            {{item}}
+        </ul>
+    }
+</div>
+</div>
